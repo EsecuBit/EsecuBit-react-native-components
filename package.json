@@ -1,0 +1,19 @@
+{
+  "name": "esecubit-react-native-wallet-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "LGPLv3",
+  "private": true,
+  "description": "React Native Components For EsecuBit Wallet",
+  "repository": "https://github.com/EsecuBit/EsecuBit-react-native-wallet-components.git",
+  "author": "EsecuBit",
+
+  "dependencies": {
+    "react-native-popup-dialog": "0.18.2"
+  },
+
+  "peerDependencies": {
+    "react-native": "0.59.9"
+  }
+}
+
