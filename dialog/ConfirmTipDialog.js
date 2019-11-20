@@ -1,6 +1,7 @@
 import React from 'react'
 import Dialog, {DialogContent, DialogTitle} from "react-native-popup-dialog";
 import {BackHandler, StyleSheet} from "react-native";
+import {withNavigation} from 'react-navigation'
 
 const styles = StyleSheet.create({
   verticalDialogContent: {
@@ -36,11 +37,13 @@ class ConfirmTipDialog extends React.PureComponent {
   }
 
   componentDidMount(): void {
-    BackHandler.addEventListener("hardwareBackPress", this.onBackPress)
-  }
+    this.props.navigation.addListener("willFocus", () => {
+      BackHandler.addEventListener("hardwareBackPress", this.onBackPress)
+    })
 
-  componentWillUnmount(): void {
-    BackHandler.removeEventListener("hardwareBackPress", this.onBackPress)
+    this.props.navigation.addListener("willBlur", () => {
+      BackHandler.addEventListener("hardwareBackPress", this.onBackPress)
+    })
   }
 
   // disable hardware back button
@@ -72,4 +75,4 @@ class ConfirmTipDialog extends React.PureComponent {
   }
 }
 
-export default ConfirmTipDialog
+export default withNavigation(ConfirmTipDialog)

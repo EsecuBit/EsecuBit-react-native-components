@@ -9,7 +9,8 @@
   "author": "EsecuBit",
 
   "dependencies": {
-    "react-native-popup-dialog": "0.18.2"
+    "react-native-popup-dialog": "0.18.2",
+    "react-navigation": "3.11.0"
   },
 
   "peerDependencies": {
